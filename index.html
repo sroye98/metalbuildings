@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Metalbuildings</title>
+
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/vegas.min.css" />
+    <link rel="stylesheet" href="css/metalbuildings.css" />
+</head>
+<body class="blue-grey lighten-5">
+
+    <main id="slideshow">
+        <div class="container">
+        
+            <div class="valign center" style="width: 100%;">			
+                <div style="width: 25%; margin: auto;">
+                    <img src="img/mb-logo.svg" alt="Metalbuildings" class="responsive-img" />
+                </div>
+                <h3 class="white-text" style="font-weight: 100;">
+                    COMING SOON
+                </h3>
+                <h5 class="white-text center" style="font-weight: 200;">
+                    We're currently working on creating our new website.<br />
+                    We will be launching soon, subscribe to be notified.
+                </h5>
+                
+                <br /><br /><br />
+                
+                <a class="waves-effect waves-light modal-trigger btn grey darken-1 white-text" href="#contactForm">
+                    NOTIFY ME
+                </a>
+            </div>
+        
+        </div>
+    </main>
+    
+    <footer class="grey darken-4 page-footer" style="margin-top: 0;">
+        <div class="container white-text">
+            &copy; 2017 Metalbuildings.com
+        </div>
+    </footer>
+    
+    <div id="contactForm" class="modal grey darken-4">
+        <div class="modal-content">
+            <h5 class="white-text">Want to receive updates from us?</h5>
+            <p class="grey-text text-lighten-2">Sign up by filling out your email address below.</p>
+            <div class="input-field">
+                <input id="email" type="text" class="grey-text text-lighten-4" autocomplete="off" name="email" placeholder="Email Address" tabindex="1" data-bind="validationOptions: { messageTemplate: 'emptyMessage' }, value: email, event: { blur: validateEmail }" />
+            </div>
+            <h6>
+                <span class="orange-text text-accent-2">We promise not to fill up your inbox with SPAM.</span>
+            </h6>
+        </div>
+        <div class="modal-footer grey darken-4">
+            <button type="button" class="btn orange accent-2 black-text flat-btn" tabindex="2" data-bind="click: submit">Submit</button>
+            <div class="left" data-bind="visible: updating()">
+                <i class="fa fa-refresh fa-spin fa-2x fa-fw white-text" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="emptyMessage">
+    </script>
+    
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/knockout-3.4.0.js"></script>
+    <script src="js/knockout.validation.min.js"></script>
+    <script src="js/vegas.min.js"></script>
+    <script src="js/auto-email.js"></script>
+    <script src="js/metalbuildings.js"></script>
+</body>
+</html>
