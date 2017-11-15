@@ -13,43 +13,23 @@ function contactForm() {
 	self.submit = function () {
 		self.updating(true);
 		if (self.email.isValid()) {
-			var a = [
-				{
-					email: self.email()
-				}
-			];
+			var a = {
+				email: self.email()
+			};
 
 			$.ajax({
-				beforeSend: function (xhr) {
-					xhr.setRequestHeader('Authorization', 'Bearer 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');
-			    },
-				url: 'https://api.sendgrid.com/v3/contactdb/recipients',
-				contentType: 'application/json',
+				url: 'https://script.google.com/macros/u/0/s/AKfycbz2aWV0gMH8VGYlfnEdhK6Hp0-VuluxifntCNYWSkbQ_S0_qOHb/exec',
+				method: 'GET',
+				crossDomain: true,
 				dataType: 'json',
-				data: JSON.stringify(a),
-				type: 'POST'
+				data: JSON.stringify(a)
 			}).done(function (d) {
-				var id = d.persisted_recipients[0];
-				$.ajax({
-					beforeSend: function (xhr) {
-						xhr.setRequestHeader('Authorization', 'Bearer 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')
-					},
-					url: 'https://api.sendgrid.com/v3/contactdb/lists/474222/recipients/' + id,
-					contentType: 'applicaiton/json',
-					dataType: 'json',
-					type: 'POST'
-				}).done(function (d) {
-					self.email('');
-					self.email.isModified(false);
-					
-					self.updating(false);
-					
-					$('#contactForm').closeModal();
-				}).fail(function (e) {
-					console.log(e);
-					self.updating(false);
-					alert('Something has gone wrong, please try again in a few moments.');
-				});
+				self.email('');
+				self.email.isModified(false);
+
+				self.updating(false);
+
+				$('#contactForm').closeModal();
 			}).fail(function (e) {
 				console.log(e);
 				self.updating(false);
