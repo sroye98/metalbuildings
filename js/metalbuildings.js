@@ -14,7 +14,7 @@ function contactForm() {
 		self.updating(true);
 		if (self.email.isValid()) {
 			var a = {
-				email: self.email()
+				email_address: self.email()
 			};
 
 			$.ajax({
