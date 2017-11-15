@@ -18,11 +18,13 @@ function contactForm() {
 			};
 
 			$.ajax({
-				url: 'https://script.google.com/macros/u/0/s/AKfycbz2aWV0gMH8VGYlfnEdhK6Hp0-VuluxifntCNYWSkbQ_S0_qOHb/exec',
+				url: 'https://script.google.com/a/metalbuildings.com/macros/s/AKfycbz2aWV0gMH8VGYlfnEdhK6Hp0-VuluxifntCNYWSkbQ_S0_qOHb/exec',
 				method: 'GET',
 				crossDomain: true,
 				dataType: 'json',
-				data: JSON.stringify(a)
+				data: {
+					'email_address': self.email()
+				}
 			}).done(function (d) {
 				self.email('');
 				self.email.isModified(false);
